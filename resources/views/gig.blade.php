@@ -11,24 +11,12 @@
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
       
-    <h1>{{ $heading }}</h1>
+   
+   
 
-    @if (count($Gigs) == 0)
-    <h2>No Gigs found</h2>
-    @endif
-
-     @foreach ($Gigs as $gig)
-    <h1>  
-        <a href="/Gigs/{{ $gig['id'] }}">
-    {{ $gig['title'] }} 
-
-    </a>
-
-    </h1>
-
+    <h3>  {{ $gig['title'] }} </h3>
     <h3>  {{ $gig['description'] }} </h3>
-
-    @endforeach 
+ 
         
     </body>
 </html>

@@ -2,25 +2,22 @@
 
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Gig;
 
 Route::get('/', function () {
     return view('Gigs', [
 
         'heading' => 'Latest Gigs',
-        'Gigs' => [
-            [
-                'id' => 1 ,
-                'title' => 'First Gig',
-                'description' => 'Lorem ipsum sit dolor amet'
-             ],
-             [
-                'id' => 2 ,
-                'title' => 'seconde Gig',
-                'description' => 'Lorem ipsum sit dolor amet'
-            ]
-        ]
+        'Gigs' => Gig::all()
     ]);
 });
+
+Route::get('/Gigs/{id}', function($id){
+    return view('gig', [
+        'gig' => Gig::find($id)
+    ]);
+});
+
 
 /* NOTES ONLY DONT UNCOMMENT ANY OF THIS
 
