@@ -1,35 +1,14 @@
 <?php
 
-
+use App\Http\Controllers\gigController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Gig;
 
 // main
-Route::get('/', function () {
-    return view('Gigs', [
-
-        'heading' => 'Latest Gigs',
-        'Gigs' => Gig::all()
-    ]);
-});
+Route::get('/', [gigController::class,'index']);
 
 // will redirect the selected gig by its id from the gigs page 
-Route::get('/Gigs/{id}', function($id){
-  
-    $gig = Gig::find($id); //fetching the  id from the gig model
-    
-  // handles the id param if sent to the url 
-    
-  if($gig){
-    return view('gig', [
-        'gig' => $gig
-        
-    ]);
-}else
-{
-    abort('404');
-}
-});
+Route::get('/Gigs/{gig}',[gigController::class, 'show']);
 
 
 /* NOTES ONLY DO NOT UNCOMMENT ANY OF THIS

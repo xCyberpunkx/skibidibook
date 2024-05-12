@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel Gigs</title>
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-      
-   
-   @extends('layout')
-    @section('content')
-    
-    
+<x-layout>  
     <a href="/" class="inline-block text-black ml-4 mb-4"
                 ><i class="fa-solid fa-arrow-left"></i> Back
             </a>
@@ -64,7 +47,4 @@
                     </div>
                     </x-card>
             </div>
-    @endsection
-        
-    </body>
-</html>
+    </x-layout>
