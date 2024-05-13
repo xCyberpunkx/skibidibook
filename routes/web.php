@@ -4,10 +4,16 @@ use App\Http\Controllers\gigController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Gig;
 
-// main
+// main enterypoint + all gigs
 Route::get('/', [gigController::class,'index']);
 
-// will redirect the selected gig by its id from the gigs page 
+// sudo rm -rf
+Route::get('/gigs/create', [gigController::class,'create']);
+
+//create form handeling 
+Route::post('/gigs', [gigController::class,'store']);
+
+// will redirect the selected gig by its id from the gigs page  and show the single gig
 Route::get('/Gigs/{gig}',[gigController::class, 'show']);
 
 
