@@ -40,7 +40,7 @@ class gigController extends Controller
 
        gig::create($formFields);
 
-        return redirect('/');
+        return redirect('/')->with('message',' Gig created Successfully');
     }
 
 
